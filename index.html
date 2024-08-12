@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Learning Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome for social media icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+      /* styles.css */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #f4f4f4;
+}
+
+header {
+    background: red; /* Purple color */
+    color: #fff;
+    padding: 10px 20px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 10px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    transition: background 0.3s ease, transform 0.3s ease;
+    border-radius: 4px;
+}
+
+.nav-links a:hover {
+    background: #7e57c2; /* Lighter purple */
+    transform: scale(1.05);
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    background: #fff;
+    height: 3px;
+    width: 25px;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+h1, h2, h3 {
+    margin: 0 0 10px;
+}
+
+.main-content {
+    margin-top: 20px;
+}
+
+.main-content h2 {
+    margin-bottom: 10px;
+}
+
+.blog-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-post {
+    background: #fff;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.blog-post:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.blog-post a {
+    color: #5e35b1; /* Purple color */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.blog-post a:hover {
+    text-decoration: underline;
+}
+
+.login-container {
+    max-width: 500px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 20px;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.login-form input {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.login-form button {
+    background: #5e35b1; /* Purple color */
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.login-form button:hover {
+    background: #7e57c2; /* Lighter purple */
+}
+
+footer {
+    background: #5e35b1; /* Purple color */
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.footer-info {
+    flex: 1;
+}
+
+.footer-info p {
+    margin: 10px 0;
+}
+
+.footer-info i {
+    margin-right: 10px;
+}
+
+.footer-social {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-icon {
+    color: #fff;
+    font-size: 24px;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #7e57c2; /* Lighter purple */
+    transform: scale(1.1);
+}
+
+.footer-bottom {
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background: #5e35b1; /* Purple color */
+        width: 200px;
+        border-radius: 4px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-links a {
+        padding: 15px;
+        text-align: center;
+    }
+
+    .menu-toggle.open .bar:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .menu-toggle.open .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.open .bar:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">Learn With Vishal</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#courses">Courses</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#login">Login</a></li>
+            </ul>
+            <div class="menu-toggle" id="menu-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="home">
+            <h1>Welcome to LearnLang</h1>
+            <p>Your journey to mastering English starts here. Explore our courses and resources to improve your language skills.</p>
+            <div class="main-content">
+                <h2>Why English?</h2>
+                <p>English is the global language of communication, business, science, and technology. Mastering English can open doors to new opportunities, enhance travel experiences, and connect you with people worldwide.</p>
+                <h2>How We Can Help</h2>
+                <p>Our platform offers a range of tools and resources to help you learn English effectively. From interactive courses to expert tutorials, we are here to support you every step of the way.</p>
+            </div>
+        </section>
+        
+        <section id="courses">
+            <h2>Our Courses</h2>
+            <p>We offer a variety of courses tailored to different levels and needs. Check out our offerings and find the perfect course for you.</p>
+        </section>
+        
+        <section id="about">
+            <h2>About Us</h2>
+            <p>LearnLang is dedicated to providing high-quality language learning resources. Our team consists of experienced educators and language experts committed to helping you achieve fluency.</p>
+        </section>
+        
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>Have questions or feedback? Reach out to us through our contact form or email us directly.</p>
+        </section>
+        
+        <section id="blog">
+            <h2>Blog</h2>
+            <div class="blog-container">
+                <article class="blog-post">
+                    <h3>Why Learning English is Important</h3>
+                    <p>Learning English opens up a world of opportunities, from better career prospects to cultural enrichment. Discover why mastering English is a valuable skill.</p>
+                    <a href="#">Read More</a>
+                </article>
+                
+                <article class="blog-post">
+                    <h3>Top Tips for Learning English Effectively</h3>
+                    <p>Explore practical tips and strategies to enhance your English learning experience. From immersive practices to effective study habits, find out how to make the most of your learning journey.</p>
+                    <a href="#">Read More</a>
+                </article>
+                
+                <article class="blog-post">
+                    <h3>Common Mistakes to Avoid When Learning English</h3>
+                    <p>Avoid common pitfalls and mistakes that language learners often make. Learn how to correct these errors and improve your English proficiency.</p>
+                    <a href="#">Read More</a>
+                </article>
+
+                <!-- New Blog Post about English Grammar and Sentences -->
+                <article class="blog-post">
+                    <h3>Understanding English Grammar: The Basics</h3>
+                    <p>Grammar is the foundation of effective communication in English. This post covers the essential rules of English grammar, including parts of speech, sentence structure, and common grammatical errors.</p>
+                    <a href="#">Read More</a>
+                </article>
+
+                <article class="blog-post">
+                    <h3>Constructing Clear and Correct Sentences</h3>
+                    <p>Crafting clear and correct sentences is crucial for effective writing and speaking. Learn how to structure sentences properly, avoid common mistakes, and enhance your English proficiency.</p>
+                    <a href="#">Read More</a>
+                </article>
+            </div>
+        </section>
+
+        <!-- Login Form Section -->
+        <section id="login">
+            <h2>Login</h2>
+            <div class="login-container">
+                <form class="login-form">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required>
+
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+
+                    <button type="submit">Login</button>
+                </form>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Jalna, Sambhaji Nagar Road EN 8756</p>
+                <p><i class="fas fa-phone-alt"></i> (+91) 7972628662</p>
+                <p><i class="fas fa-envelope"></i> info@learnwithvishal.com</p>
+            </div>
+            <div class="footer-social">
+                <a href="#" class="social-icon" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-icon" title="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/vishal_deshmukh_34?igsh=YmQ1cHEwNmtoYTEx" class="social-icon" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/vishal-deshmukh-9a814324a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="social-icon" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Learn With Vishal. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+      // script.js
+document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        menuToggle.classList.toggle('open');
+    });
+});
+
+    </script>
+    
+</body>
+</html>
